@@ -1,0 +1,16 @@
+.RandomPokemon {
+width: 300px;
+
+border: 2px solid black;
+}
+
+.RandomPokemon h1 {
+    
+    font-size: 1em;
+    text-align: center;
+}
+
+.RandomPokemon img {
+    width: 150px;
+    align-self: center;
+}

@@ -1,9 +1,10 @@
-import Image from "next/image";
-//import styles from "./page.module.css";
+//main page run with "npm run dev" in terminal
 
-//main page
+import RandomPokemon from "./RandomPokemon";
+
+
 export default function Home() {
   return (
-    <div></div>
+    <RandomPokemon/>
   );
 }
