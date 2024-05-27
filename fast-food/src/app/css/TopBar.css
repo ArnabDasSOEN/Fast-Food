@@ -2,7 +2,7 @@
     border-bottom: none;
     height: 3em;
     width:100vw;
-    position:fixed;
+    position:sticky;
 
     display: flex;
     justify-content: space-between;
