@@ -1,0 +1,31 @@
+.topBar{
+    border-bottom: 1px solid black;
+    height: 3em;
+    width:100vw;
+    position:fixed;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#sideBar{
+  padding:0.1em;
+  padding-top: 0;
+}
+
+#logo {
+    justify-content: center;
+    align-items: center;
+    font-size: 1.9em;
+    position:relative;
+    bottom: 0.7em;
+
+    
+  }
+
+#importantButtons button{
+ margin:3px;
+}
+
+
