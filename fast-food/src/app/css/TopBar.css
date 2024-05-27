@@ -1,18 +1,38 @@
 .topBar{
-    border-bottom: 1px solid black;
+    border-bottom: none;
     height: 3em;
     width:100vw;
     position:fixed;
 
     display: flex;
     justify-content: space-between;
+
+    background-color: #FEF7AF;
+    border-radius: 20px;
 }
 
 
-#sideBar{
+#sideBarButton{
   padding:0.1em;
   padding-top: 0;
+  width:6.5em;
+
+  border: 1px solid black;
+  color: rgb(24, 21, 21);
+  
+  border-radius: 20px;
+  font-size: 1em;
+
+  transition: 0.3s;
 }
+
+#sideBarButton:hover{
+  background-color: #B9E3C6;
+  border-color: #B9E3C6;
+
+  /* color:aliceblue; */
+}
+
 
 #logo {
     justify-content: center;
@@ -21,11 +41,30 @@
     position:relative;
     bottom: 0.7em;
 
+    color: #D81E5B;
     
   }
 
 #importantButtons button{
- margin:3px;
+ margin-left: 2em;
+ border-radius:20px;
+  /*top left-right bottom*/
+ padding: 0.6em 2em 0.6em;
+
+ border: 1px solid black;
+ transition:0.3s;
+
+ width:7em;
+ 
+}
+
+#importantButtons button:hover{
+  background-color: #B9E3C6;
+  border-color: #B9E3C6;
+}
+
+#history{
+  margin-right: 1.4em;
 }
 
 
