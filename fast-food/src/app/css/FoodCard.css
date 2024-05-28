@@ -1,0 +1,31 @@
+.card{
+border:2px solid black;
+width: 15vw;
+border-radius: 25px;
+height: 35vh;
+
+
+}
+
+#CardImage{
+    width: 75%;
+    margin:auto;
+    display:block;
+
+    border:2px solid black;
+}
+
+.card div{
+    display:block;
+    border: 1px solid red;
+    width:auto;
+    height:12.5%;
+}
+
+.CardInfo *{
+    display:inline;
+}
+.CardInfo{
+    display:flex;
+    justify-content:space-around;
+}
