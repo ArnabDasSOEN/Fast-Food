@@ -6,7 +6,22 @@ width: 15vw;
 border-radius: 25px;
 height: 35vh;
 background-color: #FFEAEE;
+display:inline-block;
+margin-left: 0.5em;
 }
+
+@keyframes levitate {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+.card:nth-of-type(2n){
+    animation: levitate 2s ease infinite alternate;
+}
+
 
 #CardImage{
     width: 75%;
@@ -45,6 +60,6 @@ background-color: #FFEAEE;
 }
 
 .CardButtons button:hover{
-    background-color: #0a1a29;
-    color: yellow;
+    background-color: #3d4d5a;
+    color: rgb(245, 245, 225);
 }

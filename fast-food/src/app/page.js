@@ -8,15 +8,17 @@ main css colors:
     #FFFD98
 */
 import "./css/Global.css";
-//import RandomPokemon from "./RandomPokemon";
+// import RandomPokemon from "./RandomPokemon";
 import TopBar from  "./TopBar.js";
-import FoodCard from "./FoodCard.js";
+// import FoodCard from "./FoodCard.js";
+import TopBar from  "./TopBar.js";
 
 export default function Home() {
   return (
     <>
     <TopBar/>
-    <FoodCard name="pizza" price={2.99} src="https://thumb.ac-illust.com/80/80ab92336666da6aa961462289dc6508_t.jpeg"/>
+   
+    
     </>
   );
   
