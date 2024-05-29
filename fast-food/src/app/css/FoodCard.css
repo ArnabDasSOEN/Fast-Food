@@ -1,31 +1,50 @@
+/* #B3DEE2 */
+
 .card{
-border:2px solid black;
+border:3px solid #23395B;
 width: 15vw;
 border-radius: 25px;
 height: 35vh;
-
-
+background-color: #FFEAEE;
 }
 
 #CardImage{
     width: 75%;
+    display:block;
     margin:auto;
-    display:block;
-
-    border:2px solid black;
+    border:2px solid #D81E5B;
+    border-radius: 25px;
+    /* top-bottom | left right */
+    margin: 0.5em auto 0;
+    
 }
 
-.card div{
-    display:block;
-    border: 1px solid red;
-    width:auto;
-    height:12.5%;
-}
-
-.CardInfo *{
-    display:inline;
-}
 .CardInfo{
     display:flex;
     justify-content:space-around;
+    color: #23395B;
+    font-size:large
+}
+
+.CardButtons{
+    display:flex;
+    justify-content: space-around;
+    margin:none;
+}
+
+.CardButtons button{
+    position:relative;
+    bottom: 0.9em;
+     /*top left-right bottom*/
+    padding: 0.5em 2em;
+    border-radius: 10px;
+
+    border:2px solid #23395B;
+    background-color: #d3f1f3;
+    transition:0.3s;
+}
+
+.CardButtons button:hover{
+    background-color: #0a1a29;
+    color: yellow;
 }

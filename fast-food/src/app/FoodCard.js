@@ -8,6 +8,7 @@ function FoodCard(props){
     return(
         <div className="card">
             <img id="CardImage" src={props.src}></img>
+            
             <div className="CardInfo">
                 <h4 className="NameOfFood">{props.name}</h4>
                 <h5 className="PriceOfFood">${props.price}</h5>

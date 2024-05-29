@@ -13,6 +13,11 @@
     margin-bottom:20px;
 }
 
+.topBar button{
+  color:white;
+  background-color: #E97B6A;
+}
+
 
 #sideBarButton{
   padding:0.1em;
@@ -20,7 +25,7 @@
   width:6.5em;
 
   border: 1px solid black;
-  color: rgb(24, 21, 21);
+ 
   
   border-radius: 20px;
   font-size: 1em;
@@ -31,6 +36,7 @@
 #sideBarButton:hover{
   background-color: #B9E3C6;
   border-color: #B9E3C6;
+  color:#2A2827;
 
   /* color:aliceblue; */
 }
@@ -63,6 +69,7 @@
 #importantButtons button:hover{
   background-color: #B9E3C6;
   border-color: #B9E3C6;
+  color:#2A2827;
 }
 
 #history{

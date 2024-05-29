@@ -7,7 +7,7 @@ main css colors:
     #23395B
     #FFFD98
 */
-
+import "./css/Global.css";
 //import RandomPokemon from "./RandomPokemon";
 import TopBar from  "./TopBar.js";
 import FoodCard from "./FoodCard.js";
