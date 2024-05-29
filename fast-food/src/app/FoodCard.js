@@ -14,7 +14,7 @@ function FoodCard(props){
                 <h5 className="PriceOfFood">${props.price}</h5>
             </div>
             <div className="CardButtons">
-                <button>Buy</button>
+                <button>Add</button>
                 <button>info</button>
             </div>
         </div>

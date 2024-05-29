@@ -8,6 +8,7 @@ height: 35vh;
 background-color: #FFEAEE;
 display:inline-block;
 margin-left: 0.5em;
+margin-bottom: 4em;
 }
 
 @keyframes levitate {
@@ -18,7 +19,7 @@ margin-left: 0.5em;
         transform: translateY(-10px);
     }
 }
-.card:nth-of-type(2n){
+.card:nth-of-type(n+2){
     animation: levitate 2s ease infinite alternate;
 }
 

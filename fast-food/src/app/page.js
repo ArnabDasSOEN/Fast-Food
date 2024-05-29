@@ -11,14 +11,14 @@ import "./css/Global.css";
 // import RandomPokemon from "./RandomPokemon";
 import TopBar from  "./TopBar.js";
 // import FoodCard from "./FoodCard.js";
-import TopBar from  "./TopBar.js";
+import MainSection from "./MainSection.js";
 
 export default function Home() {
   return (
     <>
     <TopBar/>
-   
-    
+    <MainSection/>
+
     </>
   );
   
