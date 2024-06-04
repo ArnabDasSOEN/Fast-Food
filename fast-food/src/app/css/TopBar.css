@@ -1,14 +1,14 @@
 .topBar{
     border-bottom: none;
     height: 3em;
-    width:100vw;
+    width:100%;
     position:sticky;
 
     display: flex;
     justify-content: space-between;
 
     background-color: #FEF7AF;
-    border-radius: 20px;
+    border-radius: 0;
 
     margin-bottom:20px;
 }
@@ -17,32 +17,6 @@
   color:white;
   background-color: #E97B6A;
 }
-
-
-#sideBarButton{
-  padding:0.1em;
-  padding-top: 0;
-  width:3em;
-
-  border: 1px solid black;
- 
-  
-  border-radius: 20px;
-  font-size: 1em;
-
-  transition: 0.3s;
-
-  font-size: 1.5em;
-}
-
-#sideBarButton:hover{
-  background-color: #B9E3C6;
-  border-color: #B9E3C6;
-  color:#2A2827;
-
-  /* color:aliceblue; */
-}
-
 
 #logo {
     justify-content: center;

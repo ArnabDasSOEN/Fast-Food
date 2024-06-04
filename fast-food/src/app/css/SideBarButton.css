@@ -1,0 +1,23 @@
+#sideBarButton{
+    padding:0.1em;
+    padding-top: 0;
+    width:3em;
+  
+    border: 1px solid black;
+   
+    
+    border-radius: 20px;
+    font-size: 1em;
+  
+    transition: 0.3s;
+  
+    font-size: 1.5em;
+  }
+  
+  #sideBarButton:hover{
+    background-color: #B9E3C6;
+    border-color: #B9E3C6;
+    color:#2A2827;
+  
+    /* color:aliceblue; */
+  }

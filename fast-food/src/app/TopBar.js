@@ -1,13 +1,17 @@
 import SideBarPanel from "./SideBarPanel";
 import "./css/TopBar.css";
+import React from "react";
+import SideBarButton from "./SideBarButton";
+
 function TopBar(){
 
     // #131212 -> color for the borders of buttons
 return (
     <section className="topBar">
         
-            <button id="sideBarButton">{"\u2261"}</button>
-            {/* <SideBarPanel/> */}
+            
+            <SideBarButton/>
+            <SideBarPanel/>
             <h2 id="logo">Fast-food!</h2>
             <div id="importantButtons">
                 <button id="login">login</button>

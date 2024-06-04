@@ -2,7 +2,11 @@
     height:200px;
     width:200px;
     background-color:blue;
-    position:relative;
-    right: 25%;
+    position:absolute;
+    
+    top: 48px;
+    height:100vh;
+
+    display:block;
     
 }
