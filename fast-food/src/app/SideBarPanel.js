@@ -1,4 +1,4 @@
-
+import "./css/SideBarPanel.css"
 function SideBarPanel(){
 
 

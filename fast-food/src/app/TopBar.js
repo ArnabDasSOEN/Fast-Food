@@ -1,3 +1,4 @@
+import SideBarPanel from "./SideBarPanel";
 import "./css/TopBar.css";
 function TopBar(){
 
@@ -5,7 +6,8 @@ function TopBar(){
 return (
     <section className="topBar">
         
-            <button id="sideBarButton">side bar</button>
+            <button id="sideBarButton">{"\u2261"}</button>
+            {/* <SideBarPanel/> */}
             <h2 id="logo">Fast-food!</h2>
             <div id="importantButtons">
                 <button id="login">login</button>
