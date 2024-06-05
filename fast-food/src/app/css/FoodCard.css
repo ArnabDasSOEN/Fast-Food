@@ -11,7 +11,7 @@ margin-left: 0.5em;
 margin-bottom: 4em;
 }
 
-/* @keyframes levitate {
+@keyframes levitate {
     0% {
         transform: translateY(0);
     }
@@ -21,7 +21,7 @@ margin-bottom: 4em;
 }
 .card:nth-of-type(2n){
     animation: levitate 2s ease infinite alternate;
-} */
+}
 
 
 

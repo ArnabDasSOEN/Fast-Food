@@ -1,6 +1,7 @@
 import FoodCard from "./FoodCard.js";
 
-function MainSection(){
+
+function MainSection({panelShown}){
 
     //this is basically the entire menue displayed
 
