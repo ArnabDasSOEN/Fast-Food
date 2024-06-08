@@ -1,9 +1,12 @@
+import "./css/Global.css";
+import TopBar from "./TopBar.js";
+
 function AboutUs(){
-    
-    
+
     return (
         <div>
-            <h2>About Us Page ooga booga</h2>
+            <TopBar/>
+            <h2>About Us Page</h2>
 
         </div>
     );
