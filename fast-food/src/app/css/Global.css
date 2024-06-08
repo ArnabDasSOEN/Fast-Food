@@ -2,3 +2,9 @@ button:hover{
     cursor:pointer;
 }
 
+.hidden {
+    display:none;
+}
+.hidden *{
+    display:nonel;
+}

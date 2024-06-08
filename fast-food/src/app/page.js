@@ -1,6 +1,5 @@
 "use client";
 
-//main page run with "npm run dev" in terminal
 /* 
 main css colors:  
     #B9E3C6
@@ -16,7 +15,6 @@ import MainSection from "./MainSection.js";
 import React, { useState } from 'react';
 
 
-
 export default function Home() {
 
   //logic to make side bar panel appear
@@ -24,7 +22,7 @@ export default function Home() {
 const [displayed, setDisplayed] = useState("SideBarPanel");
 const toggled = () => {
   if (displayed==="SideBarPanel"){
-    setDisplayed("");
+    setDisplayed("hidden");
   }
   else{
     setDisplayed("SideBarPanel")

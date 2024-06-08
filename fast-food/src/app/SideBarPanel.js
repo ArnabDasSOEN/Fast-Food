@@ -1,10 +1,14 @@
 import "./css/SideBarPanel.css"
+import TagsInSideBar from "./TagsInSideBar.js";
+
 function SideBarPanel({classname}){
 
 
-    return <div className={classname}></div>;
+    return (
+        <div className={classname}>
+           <TagsInSideBar link="./AboutUs-" text="About Us"/>
+        </div>
+    );
 }
-
-//SideBarPanel as className prior
 
 export default SideBarPanel;
