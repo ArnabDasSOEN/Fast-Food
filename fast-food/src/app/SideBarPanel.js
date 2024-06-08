@@ -1,10 +1,10 @@
 import "./css/SideBarPanel.css"
-function SideBarPanel(){
+function SideBarPanel({classname}){
 
 
-    return <div className="SideBarPanel"></div>;
+    return <div className={classname}></div>;
 }
 
-
+//SideBarPanel as className prior
 
 export default SideBarPanel;

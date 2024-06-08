@@ -2,15 +2,14 @@
 import "./css/TopBar.css";
 
 import SideBarButton from "./SideBarButton.js";
-import SideBarPanel from "./SideBarPanel.js";
-function TopBar({toggle, panelShown}){
+
+//toggle is the onClick event handled by the useState Hook to make the sideBarPanel appear and dissapear
+function TopBar({toggle}){
     
 return (
     <section className="topBar">
         
-            
             <SideBarButton toggle={toggle} />
-            <SideBarPanel className={panelShown}/>
             <h2 id="logo">Fast-food!</h2>
             <div id="importantButtons">
                 <button id="login">login</button>

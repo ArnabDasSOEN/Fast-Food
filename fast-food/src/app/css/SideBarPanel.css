@@ -1,12 +1,8 @@
 .SideBarPanel{
-    height:200px;
+    height:33vh;
     width:200px;
-    background-color:blue;
-    position:absolute;
-    
-    top: 55px;
-    height:100vh;
-
-    
+    background-color:#FEF7AF;
+ 
+    display:inline-block;
     
 }

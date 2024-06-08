@@ -17,26 +17,24 @@ import React, { useState } from 'react';
 
 
 
-//what you can do is move the button outside of top bar and make it position:absolute. That way it remains on the top right corner
 export default function Home() {
 
   //logic to make side bar panel appear
-
-const [displayed, setDisplayed] = useState("hideSidePanel");
-
+  //we basically change the className of the sideBarPanel everytime we click on the sideBarButton.
+const [displayed, setDisplayed] = useState("SideBarPanel");
 const toggled = () => {
-  if (displayed==="hideSidePanel"){
+  if (displayed==="SideBarPanel"){
     setDisplayed("");
   }
   else{
-    setDisplayed("hideSidePanel")
+    setDisplayed("SideBarPanel")
   }
 }
 
   return (
     <>
     <TopBar toggle={toggled}/>
-    <MainSection/>
+    <MainSection classname={displayed}/>
     </>
   );
   
