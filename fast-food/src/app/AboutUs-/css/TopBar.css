@@ -3,6 +3,9 @@
     height: 5vh;
     background-color: #FEF7AF;
     position:static;
+    display:flex;
+    border-radius:20px;
+    
 }
 
 .TopBar *{
@@ -12,10 +15,23 @@
 #logo{
     color: #D81E5B;
     font-size: 1.9em;
-    
-    
-    /* position:relative;
-    bottom: 0.7em; */
+    margin:auto;
+}
 
-    align-items: center;
+.ReturnButton{
+    float:left;
+    position:absolute;
+    padding:1em;
+    background-color:#E97B6A;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
+    font-size:small;
+    transition:0.3s;
+}
+
+.ReturnButton:hover {
+  background-color: #B9E3C6;
+  border-color: #B9E3C6;
+  color:#2A2827;
 }
