@@ -2,9 +2,11 @@
     height:33vh;
     width:200px;
     background-color:#FEF7AF;
- 
-    display:inline-block;
-    position:absolute;
+    display:flex;
+    /* position:absolute; */
     
     border:2px solid #23395B;
+    
+    
 }
+

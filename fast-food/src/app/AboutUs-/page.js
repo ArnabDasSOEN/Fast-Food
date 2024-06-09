@@ -4,11 +4,12 @@ import TopBar from "./TopBar.js";
 function AboutUs(){
 
     return (
-        <div>
+        <section>
             <TopBar/>
             <h2>About Us Page</h2>
+            <p>Fancy description</p>
 
-        </div>
+        </section>
     );
 }
 
