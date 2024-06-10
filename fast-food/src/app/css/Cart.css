@@ -1,0 +1,10 @@
+.Cart{
+    background-color:#cde7d6;
+    width:25vw;
+    height:100%;
+    /* float:right; */
+    border:2px solid black;
+    margin-right:0.5em;
+    box-shadow: 0 3px 50px rgb(207, 204, 204);
+}
+

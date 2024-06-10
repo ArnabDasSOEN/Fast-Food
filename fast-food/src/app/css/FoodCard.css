@@ -1,16 +1,5 @@
 /* #B3DEE2 */
 
-.card{
-border:3px solid #23395B;
-width: 15vw;
-border-radius: 25px;
-height: 35vh;
-background-color: #FFEAEE;
-display:inline-block;
-margin-left: 0.5em;
-margin-bottom: 4em;
-}
-
 /* @keyframes levitate {
     0% {
         transform: translateY(0);
@@ -24,11 +13,20 @@ margin-bottom: 4em;
 } */
 
 
+.card{
+border:3px solid #23395B;
+width: 15em;
+border-radius: 25px;
+height: 35vh;
+background-color: #FFEAEE;
+display:inline-block;
+margin-left: 0.5em;
+margin-bottom: 4em;
+}
 
 #CardImage{
     width: 75%;
     display:block;
-    margin:auto;
     border:2px solid #D81E5B;
     border-radius: 25px;
     /* top-bottom | left right */

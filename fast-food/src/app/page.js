@@ -19,13 +19,13 @@ export default function Home() {
 
   //logic to make side bar panel appear
   //we basically change the className of the sideBarPanel everytime we click on the sideBarButton.
-const [displayed, setDisplayed] = useState("SideBarPanel");
+const [displayed, setDisplayed] = useState("hidden");
 const toggled = () => {
-  if (displayed==="SideBarPanel"){
-    setDisplayed("hidden");
+  if (displayed==="hidden"){
+    setDisplayed("SideBarPanel");
   }
   else{
-    setDisplayed("SideBarPanel")
+    setDisplayed("hidden")
   }
 }
 
