@@ -1,11 +1,11 @@
-function CartItem({item, price}){
+function CartItem({name, price}){
 
 
     return(
-        <>
-        <p>{item}</p>
+        <div>
+        <p>{name}</p>
         <p>{price}</p>
-        </>
+        </div>
     );
 }
 

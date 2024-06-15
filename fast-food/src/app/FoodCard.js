@@ -14,7 +14,7 @@ function FoodCard(props){
                 <h5 className="PriceOfFood">${props.price}</h5>
             </div>
             <div className="CardButtons">
-                <button>Add</button>
+                <button onClick={props.handler}>Add</button>
                 <button>info</button>
             </div>
         </div>

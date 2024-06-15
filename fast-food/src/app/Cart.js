@@ -1,6 +1,6 @@
 import "./css/Cart.css";
 
-function Cart({text}){
+function Cart({variable}){
 
     return(
         <section className="Cart">
@@ -8,12 +8,7 @@ function Cart({text}){
                 <p>item</p>
                 <p>price</p>
             </div>
-
-            <div className="text">
-                <p>{text}</p>
-            </div>
-
-
+            {variable}
         </section>
     );
 }
