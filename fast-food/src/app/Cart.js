@@ -1,10 +1,19 @@
 import "./css/Cart.css";
 
-function Cart(){
+function Cart({text}){
 
     return(
         <section className="Cart">
-            <p>hello bello</p>
+            <div className="structure">
+                <p>item</p>
+                <p>price</p>
+            </div>
+
+            <div className="text">
+                <p>{text}</p>
+            </div>
+
+
         </section>
     );
 }
