@@ -11,14 +11,24 @@ function MainSection({classname, menuItems}) {
     //array holding the items added to the cart
     const addedItems = [];
     const [numOfAddedItems, setNumOfAddedItems] = useState(0);
-    let cartItemsDisplayed = null; //TODO: FIX THIS. It doesn't display in the cart section the items added
+    
+    // TODO put cartItemsDisplayed as a useState variable since its a variable that changes dynamically.
+    // let cartItemsDisplayed = addedItems.map( (items) => {
+    //     return <CartItem name={items.name} price={items.price}/>
+    // }); 
 
-    function refreshCartItemsDisplayed(){ //TODO this code is also buggy
-        cartItemsDisplayed = addedItems.map( (items) => {
+    const [cartItemsDisplayed, setCartItemsDisplayed] = useState(addedItems.map( (items) => {
+             return <CartItem name={items.name} price={items.price}/>
+         }));
+         
+    function refreshCartItemsDisplayed(){
+        setCartItemsDisplayed(addedItems.map( (items) => {
             return <CartItem name={items.name} price={items.price}/>
-        });
+        }));
         console.log(addedItems);
     }
+
+
     //array of functions responsible for handling the onClick event inside the FoodCards buttons
     const handleClicks = [];
     let counter = 0;
