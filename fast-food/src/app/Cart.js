@@ -8,7 +8,9 @@ function Cart({variable}){
                 <p>item</p>
                 <p>price</p>
             </div>
+            <div>
             {variable}
+            </div>
         </section>
     );
 }

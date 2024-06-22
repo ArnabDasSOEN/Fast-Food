@@ -17,7 +17,7 @@ function MainSection({classname, menuItems}) {
              return <CartItem name={items.name} price={items.price}/>
          }));
     //function that will rerender the cartItemsDisplayed variable above.
-    function refreshCartItemsDisplayed(){
+    function refreshCartItemsDisplayed(){ 
         setCartItemsDisplayed(addedItems.map( (items) => {
             return <CartItem name={items.name} price={items.price}/>
         }));
@@ -33,12 +33,11 @@ function MainSection({classname, menuItems}) {
     const foodCardItems = menuItems.map((items) => { //menuItems is the array passed to this component from the page.js file. We do this because the alternative is to write each foodcard and
                                                      // handleClick events manually.
         handleClicks[handleClickscounter] = () => { //were just creating the function, were not calling or doing anything here.
-                 addedItems[numOfAddedItems] = {name:items.name, price:items.price};
-                 setNumOfAddedItems(numOfAddedItems + 1);
+                 addedItems[numOfAddedItems] = {name:items.name, price:items.price}; //TODO TRY PUSH, IF NOT WORK, THEN YOU NEED TO USE USESTATE =-=--=-==-=-
+                 setNumOfAddedItems(numOfAddedItems + 1);//this serves as the number of added items and the next index in which we need to add inside the array addedItems
                  refreshCartItemsDisplayed();//refreshing the items displayed in the cart.
              }
-             handleClickscounter++;
-
+        handleClickscounter++;
         return <FoodCard name={items.name} price={items.price} src={items.src} handler={handleClicks[handleClickscounter - 1]} />;
         //I was not aware we could do this. But essentially, you can have a looping system that returns a bunch of components, encapsulate all of this inside a variable, and then simply return
         //that variable and it's going to return all those components.
