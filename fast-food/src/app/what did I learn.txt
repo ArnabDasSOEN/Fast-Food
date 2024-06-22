@@ -1,0 +1,28 @@
+1. empty arrays do not have the __prototype__ Array methods. So an empty array intiialized does not have the .map() function or the .push() function. 
+2. you can have logic that returns a component multiple times and encapsulate it inside a variable such as:
+
+const variable = looping logic... return <component> ;
+then in the return section, you simply do: return {variable}.
+and it's going to display all of the components. If there are 15 of them, all 15 of them gets rendered in the browser. See MainSection.js for further examples.
+
+3.everytime a component changes dynamically during runtime. Especially from events such as onClick, onSubmit etc. You have to use Hooks such as useState or useEffect. Or else you get
+unexpected behavior.
+
+4. You can pass down arrays and objects through props. THIS IS VERY CONVENIENT as it allows for good programming practice. See this level's page.js and MainSection.js file for further context.
+Look at how menuItems is passed down and how it's used.
+
+5. you can't apply CSS to non html components. Like <FoodCard>, you can only apply css to actual CSS components such as <div> inside <FoodCard>. This is why we always give the highest level
+element in a component the className of itself. For example, <FoodCard> returns a <div> at the highest level and we gave it the className of "card" (good programming practice would be to
+call it "foodCard" instead of "card")
+
+6. The first step in solving any problem is realizing there is one. The second one is to identify it. This is the entire point of troubleshotting and debugging. You locate the problem and then
+work on it to move forward and progress. So always ask yourself why are you stuck and what are you trying to do.
+
+7. when defining a function, you're not calling it. I already knew this but made a silly mistake about it. Shows you that i have much to learn and much to master.
+When you define a function, you're not calling it. Additionally, even function calls inside of the function are not being called. For example
+
+function f1{
+    function2();
+};
+
+In this example, function2() is not being called because we're defining function f1. However, if we do f1() then function2() will be called.
