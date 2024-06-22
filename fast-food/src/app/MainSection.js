@@ -6,19 +6,21 @@ import React, { useState } from "react";
 import CartItem from "./CartItem.js";
 
 
-    
+    //TODO: .map TypeError fix and .push TypeError fix.
 function MainSection({classname, menuItems}) {
-    const addedItems = []; //array holding the items added to the cart
-    //a number that will hold the value of the number of added items in the cart and set the index to where the next item should be added
-    const [numOfAddedItems, setNumOfAddedItems] = useState(0);
+    //Any component that changes dynamically during usage must be used by useState hook.
+
+    const [addedItems, setAddedItems] = useState([]);
     
     //This is for the cart. Since its a component that displays items (which is dynamic) It needs to be put into a state in order for react to rerender it.
     const [cartItemsDisplayed, setCartItemsDisplayed] = useState(addedItems.map( (items) => {
-             return <CartItem name={items.name} price={items.price}/>
+             return <CartItem name={items.name} price={items.price}/>;
          }));
-    //function that will rerender the cartItemsDisplayed variable above.
+    
+    
+         //function that will rerender the cartItemsDisplayed variable above.
     function refreshCartItemsDisplayed(){ 
-        setCartItemsDisplayed(addedItems.map( (items) => {
+        setCartItemsDisplayed(addedItems.map( (items) => { 
             return <CartItem name={items.name} price={items.price}/>
         }));
         console.log(addedItems);
@@ -33,9 +35,13 @@ function MainSection({classname, menuItems}) {
     const foodCardItems = menuItems.map((items) => { //menuItems is the array passed to this component from the page.js file. We do this because the alternative is to write each foodcard and
                                                      // handleClick events manually.
         handleClicks[handleClickscounter] = () => { //were just creating the function, were not calling or doing anything here.
-                 addedItems[numOfAddedItems] = {name:items.name, price:items.price}; //TODO TRY PUSH, IF NOT WORK, THEN YOU NEED TO USE USESTATE =-=--=-==-=-
-                 setNumOfAddedItems(numOfAddedItems + 1);//this serves as the number of added items and the next index in which we need to add inside the array addedItems
-                 refreshCartItemsDisplayed();//refreshing the items displayed in the cart.
+            setAddedItems(addedItems.push({name:items.name, price:items.price})); //try [...addedItems,{new object}]
+            refreshCartItemsDisplayed();
+            
+            
+            // addedItems.push({name:items.name, price:items.price}); //TODO TRY PUSH, IF NOT WORK, THEN YOU NEED TO USE USESTATE =-=--=-==-=-
+            //      setNumOfAddedItems(numOfAddedItems + 1);//this serves as the number of added items and the next index in which we need to add inside the array addedItems
+            //      refreshCartItemsDisplayed();//refreshing the items displayed in the cart.
              }
         handleClickscounter++;
         return <FoodCard name={items.name} price={items.price} src={items.src} handler={handleClicks[handleClickscounter - 1]} />;
