@@ -1,6 +1,6 @@
 import "./css/Cart.css";
 
-function Cart({variable}){
+function Cart({variable, total}){
 
     return(
         <section className="Cart">
@@ -8,8 +8,14 @@ function Cart({variable}){
                 <p>item</p>
                 <p>price</p>
             </div>
+
+            <div className="total">total: ${total}</div>
+
             <div>
             {variable}
+            </div>
+            <div className="cartButtons">
+                <button className="cartButton">Buy</button>
             </div>
         </section>
     );

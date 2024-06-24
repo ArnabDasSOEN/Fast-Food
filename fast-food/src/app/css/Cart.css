@@ -15,3 +15,31 @@
     text-decoration: underline;
     color: #23395B;
 }
+
+.cartButton{
+    padding: 0.4em 3.1em;
+    color:white;
+    background-color: #E97B6A;
+    transition:0.3s;
+    border-radius:7px;
+    border: 1px solid black;
+}
+
+.cartButton:hover{
+    background-color: #B9E3C6;
+    border-color: #B9E3C6;
+    color:#2A2827;
+  }
+
+  .cartButtons{
+    margin-top:10px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+  }
+
+
+  .total{
+    display:flex;
+    justify-content: center;
+  }
