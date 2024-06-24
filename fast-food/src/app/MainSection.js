@@ -37,7 +37,6 @@ function MainSection({classname, menuItems}) {
              }
         handleClickscounter++;
 
-
         return <FoodCard name={items.name} price={items.price} src={items.src} handler={handleClicks[handleClickscounter - 1]} />;
         //I was not aware we could do this. But essentially, you can have a looping system that returns a bunch of components, encapsulate all of this inside a variable, and then simply return
         //that variable and it's going to return all those components.

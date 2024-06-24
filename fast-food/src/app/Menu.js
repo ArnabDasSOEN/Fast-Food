@@ -1,5 +1,9 @@
 //The purpose of this file is to create a level of abstraction above the MainSection component, so that we can pass an array of objects (which are the menu items). This faciliates
 //other things like handling button clicks.
+
+//THIS FILE IS NOT USED. I FOUND IT TO BE USELESS.
+//however, see the commented part with the multiple <FoodCard> components, this is what was inside the MainSection.js return section file. But i changed it with something much more
+//simpler, cleaner and just generally better programming practice. By encapsulating all of those components inside a single variable and then returning that variable.
 import MainSection from "./MainSection.js";
 
 function Menu({displayed}){
