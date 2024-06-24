@@ -1,0 +1,7 @@
+.cartItem{
+    display:flex;
+    justify-content: space-around;
+    color:#001514;
+    font-size:larger;
+    font-size:1.3em;
+}
