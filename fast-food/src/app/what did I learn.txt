@@ -32,3 +32,7 @@ In this example, function2() is not being called because we're defining function
 
 This also uses the idea used in point 2 from this list. Which is that you can have a variable encapsulate a number of components, and then simply display that variable in the return section of
 a jsx element. and that's equivalent to returning all those components that it is encapsulating.
+
+
+9. when requesting a render, React only has access to the current snapshot. So the VALUE of the variable only changes IN THE NEXT RENDER. If you use a variable that hasn't been rendered
+yet but has been requested to change, then you're values will be corrupt (inconsistent) since the variable ONLY CHANGES IN THE NEXT RENDER.
