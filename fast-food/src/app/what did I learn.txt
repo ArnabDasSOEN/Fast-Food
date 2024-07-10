@@ -25,7 +25,8 @@ function f1{
     function2();
 };
 
-In this example, function2() is not being called because we're defining function f1. However, if we do f1() then function2() will be called.
+In this example, function2() is not being called because we're defining function f1. However, if we do f1() then function2() will be called. When you define a function (or pass a function
+like I did in MainSection.js for the array of handleClicks) you're not running the code inside the function, you're only writing it.
 
 8. If you want to dynamically create a div, look at MainSection.js file and Cart.js and CartItem.js. CartItem.js returns a div, and when you click the add button, it returns a CartItem
 (which returns a div) and that gets displayed.
@@ -36,3 +37,5 @@ a jsx element. and that's equivalent to returning all those components that it i
 
 9. when requesting a render, React only has access to the current snapshot. So the VALUE of the variable only changes IN THE NEXT RENDER. If you use a variable that hasn't been rendered
 yet but has been requested to change, then you're values will be corrupt (inconsistent) since the variable ONLY CHANGES IN THE NEXT RENDER.
+
+If you think about taking a selfie. Formally, it is freezing the visual data and capturing it to then store it. A snapshot is exactly that, it's a picture of the current data.

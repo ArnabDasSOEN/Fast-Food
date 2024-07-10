@@ -3,6 +3,7 @@ import TagsInSideBar from "./TagsInSideBar.js";
 
 function SideBarPanel({classname}){
 
+    
 
     return (
         <div className={classname}>
