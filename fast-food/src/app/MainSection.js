@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import CartItem from "./CartItem.js";
 
 
-    //TODO maybe use useEffect instead of useState due to rendering components as soon as a change occurs.
+   
 function MainSection({classname, menuItems}) {
     const [total, setTotal] = useState(0);
     const [addedItems, setAddedItems] = useState([]); //variable containing items added to cart
@@ -26,9 +26,8 @@ function MainSection({classname, menuItems}) {
     const foodCardItems = menuItems.map((items) => { 
         handleClicks[handleClickscounter] = () => { //were just creating the function here, not calling anything
             setAddedItems([...addedItems, {name:items.name, price:items.price} ]); //the function is not getting called when initialized, it only gets called when the onClick events occurs
-            console.log(addedItems);//DELETE
             setCartItemsDisplayed([...cartItemsDisplayed, <CartItem name={items.name} price={items.price}/> ]); //array deconstruction is OP.
-            console.log("Printed in handleClicks") //you can observe this through this print statement. It doesnt print it 12 times when the website loads.
+            //console.log("Printed in handleClicks") //you can observe this through this print statement. It doesnt print it 12 times when the website loads.
             setTotal(total + items.price);
              }
         handleClickscounter++;

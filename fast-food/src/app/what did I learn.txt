@@ -28,6 +28,9 @@ function f1{
 In this example, function2() is not being called because we're defining function f1. However, if we do f1() then function2() will be called. When you define a function (or pass a function
 like I did in MainSection.js for the array of handleClicks) you're not running the code inside the function, you're only writing it.
 
+There is a difference between defining a function (or passing it) and executing it. The only time a function gets executed is... when it gets executed. Other than that, the code
+inside the function does not run.
+
 8. If you want to dynamically create a div, look at MainSection.js file and Cart.js and CartItem.js. CartItem.js returns a div, and when you click the add button, it returns a CartItem
 (which returns a div) and that gets displayed.
 
