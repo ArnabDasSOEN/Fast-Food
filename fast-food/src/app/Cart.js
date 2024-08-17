@@ -1,6 +1,6 @@
 import "./css/Cart.css";
 
-function Cart({variable, total}){
+function Cart({variable, total, handleReset}){
 
     return(
         <section className="Cart">
@@ -16,6 +16,7 @@ function Cart({variable, total}){
             </div>
             <div className="cartButtons">
                 <button className="cartButton">Buy</button>
+                <button className="cartButton" onClick={handleReset}>Reset</button>
             </div>
         </section>
     );

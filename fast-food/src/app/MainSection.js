@@ -37,6 +37,13 @@ function MainSection({classname, menuItems}) {
         //So instead of having 15 different foodcards in the return section in series, you can have a single variable that contains all those food cards.
     });
 
+    //creating the onClick event handler for resetting the Cart. Using arrow functions because theyre cool :P
+    const handleResetCartonClick = () => {
+        setAddedItems([]);
+        setCartItemsDisplayed([]);
+        setTotal(0);
+    }
+
     //when you use curly braces in the return section of a JSX component. Its to indicate that we are leaving React and entering the world of regular javascript.
     return (
         <main role="Menu" className="Menu">
@@ -46,7 +53,7 @@ function MainSection({classname, menuItems}) {
                 {foodCardItems}
             </div>
             <div className="CartSection" >
-            <Cart variable={cartItemsDisplayed} total={total}/>
+            <Cart variable={cartItemsDisplayed} total={total} handleReset={handleResetCartonClick} />
             </div>
         </main>
     );
