@@ -38,7 +38,7 @@ function MainSection({classname, menuItems}) {
     });
 
     //creating the onClick event handler for resetting the Cart. Using arrow functions because theyre cool :P
-    const handleResetCartonClick = () => {
+    const handleResetCartOnClick = () => {
         setAddedItems([]);
         setCartItemsDisplayed([]);
         setTotal(0);
@@ -53,10 +53,11 @@ function MainSection({classname, menuItems}) {
                 {foodCardItems}
             </div>
             <div className="CartSection" >
-            <Cart variable={cartItemsDisplayed} total={total} handleReset={handleResetCartonClick} />
+            <Cart variable={cartItemsDisplayed} total={total} handleReset={handleResetCartOnClick} />
             </div>
         </main>
     );
 }
+
 
 export default MainSection;
