@@ -1,5 +1,5 @@
 import "./css/Cart.css";
-
+//variable is the cart items being displayed
 function Cart({variable, total, handleReset}){
 
     return(

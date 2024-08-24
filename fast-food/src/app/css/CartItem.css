@@ -5,3 +5,12 @@
     font-size:larger;
     font-size:1.3em;
 }
+
+.cartItem button{
+    height: 1.5em;
+    width: 2em;
+    display:block;
+    align-self: center;
+    padding:1px solid black;
+    background-color: rgb(238, 161, 161);
+}

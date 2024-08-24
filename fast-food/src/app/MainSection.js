@@ -4,7 +4,7 @@ import Cart from "./Cart.js";
 import "./css/MainSection.css";
 import React, { useState } from "react";
 import CartItem from "./CartItem.js";
-
+import { v4 as uuidv4 } from "uuid";
 
    
 function MainSection({classname, menuItems}) {
@@ -25,19 +25,36 @@ function MainSection({classname, menuItems}) {
     let handleClickscounter = 0;
     const foodCardItems = menuItems.map((items) => { 
         handleClicks[handleClickscounter] = () => { //were just creating the function here, not calling anything
-            setAddedItems([...addedItems, {name:items.name, price:items.price} ]); //the function is not getting called when initialized, it only gets called when the onClick events occurs
-            setCartItemsDisplayed([...cartItemsDisplayed, <CartItem name={items.name} price={items.price}/> ]); //array deconstruction is OP.
+            //our added items inside the cartItemsDisplayed and addedItems arrays need the same ID so we can refer to the same item with 1 ID inside both arrays
+            const ID = uuidv4(); //creates a unique ID.
+            setAddedItems([...addedItems, {id:ID, name:items.name, price:items.price} ]);//the function is not getting called when initialized, it only gets called when the onClick events occurs
             //console.log("Printed in handleClicks") //you can observe this through this print statement. It doesnt print it 12 times when the website loads.
+            
+            //when an item gets selected for deletion, we need to know which one. We do this through the unique ID each item has. Which is why the id must be passed inside the parameters
+            const handleItemDelete = (id) => { 
+                //setTotal(total-items.price);
+                //This will not work because when we create the function, we only have access to the data at the time when we created the function.
+                //hence, "total" is 0 and we obtain a negative total value no matter what we delete.
+                //alternatively, use this syntax approach, it works way better.
+                setTotal( price => price - items.price)
+                //we use the queue syntax for useState because if you don't, as soon as REACT finds a change, it will rerender so your delete operation is bugged.
+                setAddedItems(foodItems => {return foodItems.filter(item => item.id !== id)});
+                setCartItemsDisplayed(foodItems => { return foodItems.filter(item => item.key !== id)});
+            }
+
+            //for the handleDelete prop, we need to somehow pass in the ID that the function needs to keep track off if the item gets selected for deletion. Hence, we can't do
+            // handleDelete={handleItemDelete(ID)} because that executes our function. Instead, we can wrap our function inside another function and pass in parameters.
+            setCartItemsDisplayed([...cartItemsDisplayed, <CartItem key={ID} name={items.name} price={items.price} handleDelete={ () => handleItemDelete(ID) }/> ]);
             setTotal(total + items.price);
              }
         handleClickscounter++;
-        return <FoodCard name={items.name} price={items.price} src={items.src} handler={handleClicks[handleClickscounter - 1]} />;
+        return <FoodCard key={handleClickscounter-1} name={items.name} price={items.price} src={items.src} handler={handleClicks[handleClickscounter - 1]} />;
         //I was not aware we could do this. But essentially, you can have a looping system that returns a bunch of components, encapsulate all of this inside a variable, and then simply return
         //that variable and it's going to return all those components.
         //So instead of having 15 different foodcards in the return section in series, you can have a single variable that contains all those food cards.
     });
 
-    //creating the onClick event handler for resetting the Cart. Using arrow functions because theyre cool :P
+    //creating the onClick event handler for resetting the entire Cart
     const handleResetCartOnClick = () => {
         setAddedItems([]);
         setCartItemsDisplayed([]);
