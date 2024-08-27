@@ -41,7 +41,7 @@ a jsx element. and that's equivalent to returning all those components that it i
 9. when requesting a render, React only has access to the current snapshot. So the VALUE of the variable only changes IN THE NEXT RENDER. If you use a variable that hasn't been rendered
 yet but has been requested to change, then you're values will be corrupt (inconsistent) since the variable ONLY CHANGES IN THE NEXT RENDER.
 
-If you think about taking a selfie. Formally, it is freezing the visual data and capturing it to then store it. A snapshot is exactly that, it's a picture of the current data.
+If you think about taking a selfie. Formally, it is freezing the visual data and capturing it to then store it. A snapshot is exactly that, it's a picture of the **current** data.
 
 10. Backend does not (and should not) care about what is used on the client side. It only exposes an API which the front-end can use through making API requests. What you do need to
 configure, however, is how to connect your backend to your database and make sure the logic is properly set.
