@@ -13,10 +13,13 @@ const itemSchema = new mongoose.Schema({
 })
 
 //need to create new model.
-const Item = mongoose.model("Item", itemSchema);
+//const Item = mongoose.model("Item", itemSchema);
+//Now that i think about it, we will not be creating a model for our items since nowhere in our app do we want to view all the items. We only want to view the menu.
+
+
 //need to export the Model for the main index.js file.
 //also need to export the schema to be used in order model files.
-module.exports.Item = Item;
+//module.exports.Item = Item;
 module.exports.itemSchema = itemSchema;
 
 //"module" is just an object that contains meta data about this module.

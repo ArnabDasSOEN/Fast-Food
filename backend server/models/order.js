@@ -6,4 +6,4 @@ const orderSchema = new mongoose.Schema({
     order: [itemSchema]
 })
 
-module.exports.orderSchema = orderSchema;
+module.exports = orderSchema;
