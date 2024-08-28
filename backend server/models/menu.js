@@ -11,10 +11,7 @@ const menuItemSchema = new mongoose.Schema({
         min: 0
     },
     src: String
-    //not required
 })
-
-
 const menuSchema = new mongoose.Schema({
     items: [menuItemSchema]
 })

@@ -44,10 +44,12 @@ const menuItems = [
     {name:"sushi",          price:1.99,  src:"https://thumb.ac-illust.com/c6/c613dfaa4bcbcc18e980eaf36f55979f_t.jpeg"},
     {name:"cheese burger",  price:2.99,  src:"https://previews.123rf.com/images/kmarfu/kmarfu1807/kmarfu180700026/104604012-pixel-art-hamburger-isolated-on-white-background.jpg"}
   ];
-//we have to first delete everything in the current collection
+//we have to first delete everything in the current collection and then seed it with what we want.
 const deleteAndSeedMenu = async () => {
     await Menu.deleteMany({});
-    const c = new Menu(menuItems);
+    //remember, you're creating a new "Menu" object from the "Menu" class (which is technically a Schema)
+    //So you have to create the object and set the appropriate property to the appropriate variable
+    const c = new Menu({items: menuItems});
     await c.save();
 }
 //defining the function does not execute it. So we have to execute it here.
