@@ -1,12 +1,11 @@
 import FoodCard from "./FoodCard.js";
 import SideBarPanel from "./SideBarPanel.js";
 import Cart from "./Cart.js";
-import "./css/MainSection.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import CartItem from "./CartItem.js";
 import { v4 as uuidv4 } from "uuid";
+import "./css/MainSection.css";
 
-   
 function MainSection({classname, menuItems}) {
     const [total, setTotal] = useState(0);
     const [addedItems, setAddedItems] = useState([]); //variable containing items added to cart
@@ -64,7 +63,6 @@ function MainSection({classname, menuItems}) {
     //when you use curly braces in the return section of a JSX component. Its to indicate that we are leaving React and entering the world of regular javascript.
     return (
         <main role="Menu" className="Menu">
-
             <div className="MenuMainPart">
             <SideBarPanel classname={classname}/>
                 {foodCardItems}

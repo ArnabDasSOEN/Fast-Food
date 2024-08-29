@@ -11,7 +11,7 @@ const menuItemSchema = new mongoose.Schema({
         min: 0
     },
     src: String
-})
+}, {_id: false});//we don't want each menu item to have IDs themselves, only the whole menu should have an id.
 const menuSchema = new mongoose.Schema({
     items: [menuItemSchema]
 })

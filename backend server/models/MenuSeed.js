@@ -18,8 +18,6 @@ const mongoose = require("mongoose");
 // insertADog().then(console.log("Sucessfully Inserted Dog"));
 
 
-
-
 //mongoose module is already required up above
 const Menu = require("./menu.js");
 //connecting to database
@@ -53,6 +51,5 @@ const deleteAndSeedMenu = async () => {
     await c.save();
 }
 //defining the function does not execute it. So we have to execute it here.
-deleteAndSeedMenu().then(console.log("Succesfully deleted all previous menus"));
-
+deleteAndSeedMenu().then(console.log("Succesfully deleted all previous menus and seeded with new data."));
 
