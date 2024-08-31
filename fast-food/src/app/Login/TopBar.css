@@ -1,0 +1,39 @@
+.TopBar{
+    border-bottom: none;
+    height: 3em;
+    width:100%;
+    position:sticky;
+
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    
+
+    background-color: #FEF7AF;
+    border-radius: 0;
+    margin-bottom:20px;
+}
+
+#importantButtons button{
+    margin-left: 2em;
+    border-radius:20px;
+     /*top left-right bottom*/
+    padding: 0.6em 2em 0.6em;
+    border: 1px solid black;
+    transition:0.3s;
+    width:7em;
+   }
+
+
+#logo{
+    font-size: 1.9em;
+    bottom: 0.7em;
+    color: #D81E5B;
+
+    flex-grow: 1;
+    text-align: center;
+}
+
+#importantButtons {
+    flex-shrink: 0;
+}

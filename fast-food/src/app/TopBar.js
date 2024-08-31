@@ -12,8 +12,12 @@ return (
             <SideBarButton toggle={toggle} />
             <h2 id="logo">Fast-food!</h2>
             <div id="importantButtons">
+                <button id="history">history</button>
+                
+                <a href="./Login">
                 <button id="login">login</button>
-                <button id="history">history</button> 
+                </a>
+            
             </div>
         
         
