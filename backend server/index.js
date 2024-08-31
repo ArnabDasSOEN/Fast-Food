@@ -5,7 +5,9 @@ const mongoose = require("mongoose");
 const cors = require("cors"); //middleware that is related to security. So that your network packages don't get intercepted by other people.
 
 //middleware section
-app.use(cors()); //app.use is a method that applies to every incomming request. This means what is inside is a middleware.
+app.use(cors()); 
+app.use(express.json()); //Axios by default sends JS objects in JSON format, so we parse the body with JSON instead of urlencoded
+
 
 //database connection
 mongoose.connect("mongodb://127.0.0.1:27017/fast-food")
@@ -15,15 +17,19 @@ mongoose.connect("mongodb://127.0.0.1:27017/fast-food")
     });
 
 
-
+//RESTful API
 //main page where the client gets the menu.
 app.get("/", async (req, res) => {
-    //have to return the menu to the client which they will get from a request.
-    const menu = await Menu.findOne({})//.then( data => console.log(data));//there should only be 1 menu. If there are more, search by ID.
-    //res.send(menu);
-    //console.log("Printed data");
-    console.log(menu.items);
+    const menu = await Menu.findOne({})
+   // console.log(menu.items);
     res.send(menu.items);
+});
+
+
+app.post("/signup", (req, res) => {
+    console.log("POST request to /signup");
+    console.log(req.body);
+    res.status(200).send("signed up succesfully");
 });
 
 

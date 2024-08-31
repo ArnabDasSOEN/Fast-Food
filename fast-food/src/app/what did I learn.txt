@@ -45,3 +45,5 @@ If you think about taking a selfie. Formally, it is freezing the visual data and
 
 10. Backend does not (and should not) care about what is used on the client side. It only exposes an API which the front-end can use through making API requests. What you do need to
 configure, however, is how to connect your backend to your database and make sure the logic is properly set.
+This also means that your frontend is not running on the same port that your backend server is listening to.
+However, your backend server needs to be connected to the same port as your database because otherwise no data will pass through.
