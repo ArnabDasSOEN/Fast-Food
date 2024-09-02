@@ -1,25 +1,6 @@
 const mongoose = require("mongoose");
-//spent a lot of time debugging database connection issues with this. So i am keeping it here just in case.
-//connecting to the database
-// mongoose.connect("mongodb://127.0.0.1:27017/Dog")
-//     .then(console.log("Connected to database from express"))
-//     .catch( (err) => {
-//         console.log("Error connecting to database from express", err)
-//     });
-//  const dogSchema = new mongoose.Schema({
-//      name:String
-//  })
-//  const Dog = mongoose.model("Dog",dogSchema)
- 
-//  const insertADog = async () => {
-//       const d = new Dog({name:"Rolly"})
-//      await d.save();
-// }
-// insertADog().then(console.log("Sucessfully Inserted Dog"));
-
-
-//mongoose module is already required up above
 const Menu = require("./menu.js");
+
 //connecting to database
 mongoose.connect("mongodb://127.0.0.1:27017/fast-food")
     .then(console.log("Connected to database from express"))

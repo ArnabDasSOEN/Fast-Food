@@ -30,7 +30,6 @@ useEffect( () => {
     console.log("succesfully got your menu in the frontend from axios");
     //console.log(data.headers.date, data.data);
     //const date = data.headers.date;
-    //console.log(data.data); //the first data is the actual object we get as a response, the second is a property that sits on top of the object.
     setMenuItems(data.data);
   })
   .catch( err => {

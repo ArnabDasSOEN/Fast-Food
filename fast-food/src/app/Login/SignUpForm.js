@@ -1,10 +1,11 @@
 import axios from "axios"
-//const axios = require("axios");
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SignUpForm({loginClicked}) {
 
     const onSubmit = (e) => {
-        //e.preventDefault();
+        e.preventDefault();
         //retrieve data from forum
         const formData = new FormData(e.target); //the target property of the event object shows you what was clicked
         // for (let [key, value] of formData.entries()) { //the "entries()" method is quite useful, look up what it does.
@@ -15,8 +16,11 @@ export default function SignUpForm({loginClicked}) {
         //This is necessary because the "formData" object is not an "Actual JS" object. We can't access it's properties through the dot notation.
         const formObject = Object.fromEntries(formData.entries());
         axios.post("http://localhost:3000/signup", formObject)
+            .then(  () => {
+                toast.success("Succesfully created your account");
+            })
             .catch( err => {
-                console.log("error submitting signup form", err);
+                toast.error('Error signing up: username already exists' + err);
             })
         }
         //need to specify complete path because if we only define "/signup", the request goes to http://localhost:3001/signup. This is because since our express app is listening to port 3000
@@ -26,8 +30,9 @@ export default function SignUpForm({loginClicked}) {
 
     return(
         <main className="SignUpForm">
+            <ToastContainer />
             <h1> Sign up form</h1>
-            <form onSubmit={onSubmit} action="/signup" method="POST">
+            <form onSubmit={onSubmit} >
                 <div>
                     <label htmlFor="username"><h2>UserName:</h2></label>
                     <input type="text" name="username" id="username" placeholder="Please enter your username" required></input>
