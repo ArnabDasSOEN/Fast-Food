@@ -1,16 +1,20 @@
-// import {useState} from "react";
+import axios from "axios";
 
 export default function LoginForm({signupClicked}) {
 
-    // const [loginDisplay, setLoginDisplay] = useState({
-    //     username: "",
-    //     password: ""
-    // })
+    const onSubmit = (e) => {
 
-    // const print = (evt) => {
-    //     //console.log(evt.target.value); evt is the implicite event object passed to every event trigger. target refers to what is clicked, value is the value of the input
-           //I added onChange={print} as an attribute to the input labels.
-    // }
+        const formData = new FormData(e.target); //the target property of the event object shows you what was clicked
+        const formObject = Object.fromEntries(formData.entries());
+        axios.post("http://localhost:3000/login", formObject)
+            .then(  () => {
+               
+            })
+            .catch( err => {
+               e.preventDefault();
+               console.log("Error logging in: ", err)
+            })
+        }
 
 
    
@@ -23,7 +27,7 @@ export default function LoginForm({signupClicked}) {
     return(
         <main>
             <h1>Login page</h1>
-            <form action="/login" method="POST">
+            <form action="/" onSubmit={onSubmit}>
                 <div>
                     <label htmlFor="username"><h2>UserName:</h2></label>
                     <input type="text" name="username" id="username" placeholder="Please enter your username" required></input>
