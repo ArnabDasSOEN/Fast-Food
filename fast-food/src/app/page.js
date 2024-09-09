@@ -6,6 +6,9 @@ import { useState } from 'react';
 import { useEffect } from "react";
 //import {menuItems} from "./Menu.js"
 import axios from "axios";
+axios.defaults.withCredentials = true;
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Home() {
@@ -21,29 +24,34 @@ const toggled = () => {
   }
 }
 
-
 const [menuItems, setMenuItems] = useState([]);
+const [user, setUser] = useState(null);
 
 useEffect( () => {
   axios.get("http://localhost:3000")
-  .then( data => {
+  .then( res => {
     console.log("succesfully got your menu in the frontend from axios");
     //console.log(data.headers.date, data.data);
     //const date = data.headers.date;
-    setMenuItems(data.data);
+    // console.log(res.data.menu.items, res.data.username);
+     setUser(res.data.username);
+     setMenuItems(res.data.menu);
+     //console.log(user); //this prints "null" because in the initial render, user is set to null.
+     if (res.data.username !== "Customer"){ //user !== "Customer" && user !== null ){ //means logged in succesfully
+      toast.success(`Succesfully logged in as: ${res.data.username}`);
+      // toast.success("Succesfully created your account");
+     }
   })
   .catch( err => {
-    console.log("error getting your menu with axios", err)
+    console.log("error getting your menu with axios")
   })
 }, []); // Empty dependency array means this effect runs once after the initial render
 
-
-
-
-
   return (
     <>
+    <ToastContainer />
     <TopBar toggle={toggled}/>
+    <h3>Greetings {user}</h3>
     <MainSection menuItems={menuItems} classname={displayed}/>
     </>
   );

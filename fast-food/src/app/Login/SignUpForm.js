@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function SignUpForm({loginClicked}) {
 
     const onSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); //this may not be necessary, test your app wityh commenting this line.
         //retrieve data from forum
         const formData = new FormData(e.target); //the target property of the event object shows you what was clicked
         // for (let [key, value] of formData.entries()) { //the "entries()" method is quite useful, look up what it does.
@@ -15,6 +15,8 @@ export default function SignUpForm({loginClicked}) {
         
         //This is necessary because the "formData" object is not an "Actual JS" object. We can't access it's properties through the dot notation.
         const formObject = Object.fromEntries(formData.entries());
+
+        const inputElements = document.querySelectorAll('input[type="text"], input[type="password"]');
         axios.post("http://localhost:3000/signup", formObject)
             .then(  () => {
                 toast.success("Succesfully created your account");
@@ -22,6 +24,7 @@ export default function SignUpForm({loginClicked}) {
             .catch( err => {
                 toast.error('Error signing up: username already exists' + err);
             })
+        inputElements.forEach(input => input.value = '');
         }
         //need to specify complete path because if we only define "/signup", the request goes to http://localhost:3001/signup. This is because since our express app is listening to port 3000
         //our react application cannot connect to port 3000 and instead connects to 3001. If we make a request to http://localhost:3001/signup, we're not going to receive

@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
 })
 
 userSchema.statics.authenticate = async function(username, password){
-    const user = await this.findOne({username})
+    const user = await this.findOne({username});
     if(!user){ //means incorrect username
         return false;
     }
