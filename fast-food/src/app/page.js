@@ -26,6 +26,7 @@ const toggled = () => {
 
 const [menuItems, setMenuItems] = useState([]);
 const [user, setUser] = useState(null);
+const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 useEffect( () => {
   axios.get("http://localhost:3000")
@@ -33,13 +34,12 @@ useEffect( () => {
     console.log("succesfully got your menu in the frontend from axios");
     //console.log(data.headers.date, data.data);
     //const date = data.headers.date;
-    // console.log(res.data.menu.items, res.data.username);
      setUser(res.data.username);
      setMenuItems(res.data.menu);
      //console.log(user); //this prints "null" because in the initial render, user is set to null.
      if (res.data.username !== "Customer"){ //user !== "Customer" && user !== null ){ //means logged in succesfully
       toast.success(`Succesfully logged in as: ${res.data.username}`);
-      // toast.success("Succesfully created your account");
+      setIsLoggedIn(!isLoggedIn);
      }
   })
   .catch( err => {
@@ -50,7 +50,7 @@ useEffect( () => {
   return (
     <>
     <ToastContainer />
-    <TopBar toggle={toggled}/>
+    <TopBar toggle={toggled} isLoggedIn={isLoggedIn} />
     <h3>Greetings {user}</h3>
     <MainSection menuItems={menuItems} classname={displayed}/>
     </>

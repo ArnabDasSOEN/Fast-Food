@@ -122,7 +122,11 @@ app.post("/login", async (req, res, next) => {
 });
 
 
-
+app.get( "/logout", (req,res) => {
+    req.session.destroy();
+    res.clearCookie('session.sid');
+    res.send("Logged out succesfully");
+})
 
 
 //From the code below. I was able to troubleshoot why sessions wasn't working. its because frontend and backend are running on different ports.
