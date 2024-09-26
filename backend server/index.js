@@ -76,10 +76,6 @@ mongoose.connect("mongodb://127.0.0.1:27017/fast-food")
     .catch( (err) => {
         console.log("Error connecting to database from express", err)
     });
-
-
-
-
 //RESTful API
 //main page where the client gets the menu.
 
@@ -157,6 +153,20 @@ app.get( "/logout", (req,res) => {
 //     res.send("This is the testingAuth page ==== Logged in as <b>" + req.session.user + "</b> with password " + req.session.pass);
 //   })
 
+
+app.post("/buy", (req, res) => {
+    const order = req.body;
+    const orderItems = order.map((order) => {
+        return {
+            name: order.name,
+            price: order.price
+        }
+    })
+    //console.log(orderItems)
+    console.log(req.session)
+    
+    res.send("ok")
+})
 
 
 

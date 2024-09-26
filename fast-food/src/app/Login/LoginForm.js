@@ -11,8 +11,8 @@ export default function LoginForm({signupClicked}) {
         const formData = new FormData(e.target); //the target property of the event object shows you what was clicked
         const formObject = Object.fromEntries(formData.entries());
         const inputElements = document.querySelectorAll('input[type="text"], input[type="password"]');
-        axios.post("http://localhost:3000/login", formObject)
-            .then( data => {
+        axios.post("http://localhost:3000/login", formObject ) //alternatively, you can add {withCredentials:true} as an additional parameter aftet the data you are sending
+            .then( data => {                                   //instead of relying on axios.defaults.withCredentials = true;
                 window.location.href = "/"; //redirecting the user from the front-end.
             //    console.log(data.data);
             })

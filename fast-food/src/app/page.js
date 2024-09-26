@@ -6,8 +6,8 @@ import { useState } from 'react';
 import { useEffect } from "react";
 //import {menuItems} from "./Menu.js"
 import axios from "axios";
-axios.defaults.withCredentials = true;
-import { ToastContainer, toast } from 'react-toastify';
+//axios.defaults.withCredentials = true;
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -38,18 +38,18 @@ useEffect( () => {
      setMenuItems(res.data.menu);
      //console.log(user); //this prints "null" because in the initial render, user is set to null.
      if (res.data.username !== "Customer"){ //user !== "Customer" && user !== null ){ //means logged in succesfully
-      toast.success(`Succesfully logged in as: ${res.data.username}`);
+      //toast.success(`Succesfully logged in as: ${res.data.username}`); //========================================================================================================
       setIsLoggedIn(!isLoggedIn);
      }
   })
   .catch( err => {
     console.log("error getting your menu with axios")
-  })
+  }) 
 }, []); // Empty dependency array means this effect runs once after the initial render
 
   return (
     <>
-    <ToastContainer />
+    {/* <ToastContainer />  */}
     <TopBar toggle={toggled} isLoggedIn={isLoggedIn} />
     <h3>Greetings {user}</h3>
     <MainSection menuItems={menuItems} classname={displayed}/>

@@ -68,7 +68,7 @@ function MainSection({classname, menuItems}) {
                 {foodCardItems}
             </div>
             <div className="CartSection" >
-            <Cart variable={cartItemsDisplayed} total={total} handleReset={handleResetCartOnClick} />
+            <Cart variable={cartItemsDisplayed} total={total} handleReset={handleResetCartOnClick} arrayItem={addedItems} />
             </div>
         </main>
     );
