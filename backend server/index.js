@@ -154,7 +154,6 @@ app.get( "/logout", (req,res) => {
 //     res.send("This is the testingAuth page ==== Logged in as <b>" + req.session.user + "</b> with password " + req.session.pass);
 //   })
 
-
 app.post("/buy", async (req, res) => {
     const order = req.body;
     const orderItems = order.map((order) => {
@@ -163,15 +162,12 @@ app.post("/buy", async (req, res) => {
             price: order.price
         }
     })
-    //console.log(orderItems)
     const user = await User.findOne({username: req.session.username })
-   // console.log(user)
-    user.orders[user.orders.length] = {order : orderItems}
+    //user.orders[user.orders.length] = {order : orderItems}
+    user.orders.push({order : orderItems})
     await user.save();
-    console.log(user)
     res.send("ok")
 })
-//new Menu({items: menuItems});
 
 
 app.listen(3000, () => {
