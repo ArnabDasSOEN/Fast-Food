@@ -8,6 +8,7 @@ const AppError = require("./AppError.js"); //if you're requiring a file, you nee
 const bcrypt = require("bcrypt") //if you require a module inside node_modules, you don't need to define a relative path. 
 require('dotenv').config(); //don't need to catch this inside a variable.
 const session = require("express-session");
+//const orderSchema = require("./models/order.js")
 
 //middleware section
 //the reason why we need cors is because our backend and frontend are running on different ports (domains), this is why our session is not working properly. If it was the same domain
@@ -154,7 +155,7 @@ app.get( "/logout", (req,res) => {
 //   })
 
 
-app.post("/buy", (req, res) => {
+app.post("/buy", async (req, res) => {
     const order = req.body;
     const orderItems = order.map((order) => {
         return {
@@ -163,11 +164,14 @@ app.post("/buy", (req, res) => {
         }
     })
     //console.log(orderItems)
-    console.log(req.session)
-    
+    const user = await User.findOne({username: req.session.username })
+   // console.log(user)
+    user.orders[user.orders.length] = {order : orderItems}
+    await user.save();
+    console.log(user)
     res.send("ok")
 })
-
+//new Menu({items: menuItems});
 
 
 app.listen(3000, () => {

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useEffect } from "react";
 //import {menuItems} from "./Menu.js"
 import axios from "axios";
-//axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 // import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
