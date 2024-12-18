@@ -4,12 +4,28 @@ import LogoutButton from "./LogoutButton.js";
 import LoginButton from "./LoginButton.js";
 //toggle is the onClick event handled by the useState Hook to make the sideBarPanel appear and dissapear
 function TopBar({toggle, isLoggedIn}){
-return (
+
+
+
+
+    return (
+
+
     <section className="topBar">
             <SideBarButton toggle={toggle} />
             <h2 id="logo">Fast-food!</h2>
             <div id="importantButtons">
-                <button id="history">history</button>
+                
+                
+                    <a href="./History" className="History">
+                        <button id="history"></button>
+                    </a>
+                
+
+                
+
+
+
                 { isLoggedIn ? <LogoutButton/> : <LoginButton/> }
             </div>
     </section>

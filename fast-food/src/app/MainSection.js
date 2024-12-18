@@ -23,6 +23,7 @@ function MainSection({classname, menuItems}) {
     const handleClicks = []; 
     let handleClickscounter = 0;
     const foodCardItems = menuItems.map((items) => { 
+        //handling adding an item
         handleClicks[handleClickscounter] = () => { //were just creating the function here, not calling anything
             //our added items inside the cartItemsDisplayed and addedItems arrays need the same ID so we can refer to the same item with 1 ID inside both arrays
             const ID = uuidv4(); //creates a unique ID.

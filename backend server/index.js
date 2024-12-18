@@ -126,33 +126,7 @@ app.get( "/logout", (req,res) => {
 })
 
 
-//From the code below. I was able to troubleshoot why sessions wasn't working. its because frontend and backend are running on different ports.
 
-//test session like this. It works.
-// app.get('/testingSession', (req, res, next) => {
-//     if (req.session.views) {
-//       req.session.views++
-//       res.setHeader('Content-Type', 'text/html')
-//       res.write('<p>views: ' + req.session.views + '</p>')
-//       res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
-//       res.end()
-//     } else {
-//       req.session.views = 1
-//       res.end('welcome to the session demo. refresh!')
-//     }
-//   })
-
-//   app.get('/testingLogin', (req, res, next) => {
-//     const {user, pass} = req.query;
-//     req.session.user = user;
-//     req.session.pass = pass;
-//    // res.send("Logged in as " + user + " with password " + pass);
-//    res.redirect("/testingAuth")
-//   })
-
-//   app.get('/testingAuth', (req, res, next) => {
-//     res.send("This is the testingAuth page ==== Logged in as <b>" + req.session.user + "</b> with password " + req.session.pass);
-//   })
 
 app.post("/buy", async (req, res) => {
     const order = req.body;
@@ -168,6 +142,15 @@ app.post("/buy", async (req, res) => {
     await user.save();
     res.send("ok")
 })
+
+
+app.get("/History", async (req, res) => {
+    const user = await User.findOne({username: req.session.username})
+    res.send(user.orders)
+})
+
+
+
 
 
 app.listen(3000, () => {
